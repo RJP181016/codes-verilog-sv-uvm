@@ -1,0 +1,229 @@
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 14:53:15 on Jul 21,2025
+qrun -batch -access=rw+/. -uvmhome uvm-1.2 -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" "+UVM_TESTNAME=coverage_test" "+UVM_VERBOSITY=UVM_HIGH" -do " run -all; exit" 
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 14:53:15 on Jul 21,2025
+vlog -timescale 1ns/1ns -mfcu -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.2/src" -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package uvm_pkg_sv_unit
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling interface fifo_intf
+-- Compiling module async_fifo
+-- Compiling module top
+
+Top level modules:
+	top
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+
+In file included from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl.c:27,
+                 from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc:37:
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c: In function 'int uvm_is_vhdl_path(char*)':
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:90:12: warning: 'char* strncpy(char*, const char*, size_t)' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+   90 |     strncpy(path_copy, path, path_len);
+      |     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:72:20: note: length computed here
+   72 |   path_len = strlen(path);
+      |              ~~~~~~^~~~~~
+
+End time: 14:53:19 on Jul 21,2025, Elapsed time: 0:00:04
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 14:53:19 on Jul 21,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	top
+
+Analyzing design...
+-- Loading module top
+-- Loading package questa_uvm_pkg
+-- Loading interface fifo_intf
+-- Loading module async_fifo
+Optimizing 7 design-units (inlining 0/3 module instances):
+-- Optimizing package uvm_pkg (uvm-1.2 Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing package uvm_pkg_sv_unit(fast)
+** Warning: write_agent.sv(18): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: read_agent.sv(18): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: write_cov.sv(32): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: read_cov.sv(28): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+-- Optimizing module async_fifo(fast)
+-- Optimizing interface fifo_intf(fast__2)
+-- Optimizing module top(fast)
+-- Optimizing interface fifo_intf(fast)
+Optimized design name is qrun_opt
+End time: 14:53:27 on Jul 21,2025, Elapsed time: 0:00:08
+Errors: 0, Warnings: 5
+# vsim -batch "+UVM_TESTNAME=coverage_test" "+UVM_VERBOSITY=UVM_HIGH" -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 14:53:27 on Jul 21,2025
+# Loading /tmp/unknown@b7cc51d6c7d5_dpi_51/linux_x86_64_gcc-10.3.0/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.fifo_intf(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.uvm_pkg_sv_unit(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.fifo_intf(fast__2)
+# Loading work.async_fifo(fast)
+# Compiling /tmp/unknown@b7cc51d6c7d5_dpi_51/linux_x86_64_gcc-10.3.0/exportwrapper.c
+# Loading /tmp/unknown@b7cc51d6c7d5_dpi_51/linux_x86_64_gcc-10.3.0/vsim_auto_compile.so
+# 
+# run -all
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test coverage_test...
+# ** Warning: (vsim-PLI-3826) $dumpfile : This task should be called prior to the $dumpvars
+# task.  The $dumpfile task will be ignored.
+#    Time: 0 ns  Iteration: 0  Process: /top/#INITIAL#67 File: top.sv Line: 69
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               coverage_test           -     @356 
+#   env                      fifo_env                -     @371 
+#     ragent                 read_agent              -     @398 
+#       cov                  read_cov                -     @572 
+#         analysis_imp       uvm_analysis_imp        -     @580 
+#       drv                  read_drv                -     @415 
+#         rsp_port           uvm_analysis_port       -     @432 
+#         seq_item_port      uvm_seq_item_pull_port  -     @423 
+#       mon                  read_mon                -     @564 
+#         mon_ap             uvm_analysis_port       -     @593 
+#       sqr                  uvm_sequencer           -     @441 
+#         rsp_export         uvm_analysis_export     -     @449 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @555 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     sbd                    fifo_sbd                -     @406 
+#       mon_in               uvm_analysis_imp_in     -     @611 
+#       mon_out              uvm_analysis_imp_out    -     @620 
+#     wagent                 write_agent             -     @390 
+#       cov                  write_cov               -     @787 
+#         analysis_imp       uvm_analysis_imp        -     @795 
+#       drv                  write_drv               -     @630 
+#         rsp_port           uvm_analysis_port       -     @647 
+#         seq_item_port      uvm_seq_item_pull_port  -     @638 
+#       mon                  write_mon               -     @779 
+#         mon_ap             uvm_analysis_port       -     @808 
+#       sqr                  uvm_sequencer           -     @656 
+#         rsp_export         uvm_analysis_export     -     @664 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @770 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+# --------------------------------------------------------------
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_INFO fifo_sbd.sv(50) @ 12009: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=e1, read_data=e1, matches=1
+# UVM_INFO fifo_sbd.sv(50) @ 12021: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=1c, read_data=1c, matches=2
+# UVM_INFO fifo_sbd.sv(50) @ 12033: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=f5, read_data=f5, matches=3
+# UVM_INFO fifo_sbd.sv(50) @ 12045: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=f9, read_data=f9, matches=4
+# UVM_INFO fifo_sbd.sv(50) @ 12057: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=9f, read_data=9f, matches=5
+# UVM_INFO fifo_sbd.sv(50) @ 12069: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=30, read_data=30, matches=6
+# UVM_INFO fifo_sbd.sv(50) @ 12081: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=ed, read_data=ed, matches=7
+# UVM_INFO fifo_sbd.sv(50) @ 12093: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=4c, read_data=4c, matches=8
+# UVM_INFO fifo_sbd.sv(50) @ 12105: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=eb, read_data=eb, matches=9
+# UVM_INFO fifo_sbd.sv(50) @ 12117: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=c4, read_data=c4, matches=10
+# UVM_INFO fifo_sbd.sv(50) @ 12129: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=32, read_data=32, matches=11
+# UVM_INFO fifo_sbd.sv(50) @ 12141: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=d6, read_data=d6, matches=12
+# UVM_INFO fifo_sbd.sv(50) @ 12153: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=34, read_data=34, matches=13
+# UVM_INFO fifo_sbd.sv(50) @ 12165: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=18, read_data=18, matches=14
+# UVM_INFO fifo_sbd.sv(50) @ 12177: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=61, read_data=61, matches=15
+# UVM_INFO fifo_sbd.sv(50) @ 12189: uvm_test_top.env.sbd [fifo_sbd] data matched, write_data=d8, read_data=d8, matches=16
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 12301: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO read_cov.sv(40) @ 12301: uvm_test_top.env.ragent.cov [read_cov] ********************total_read_coverage=100.000000**********************
+# UVM_INFO fifo_sbd.sv(80) @ 12301: uvm_test_top.env.sbd [fifo_sbd] **************************************
+# UVM_INFO fifo_sbd.sv(81) @ 12301: uvm_test_top.env.sbd [PASSED] Test PASSED
+# UVM_INFO fifo_sbd.sv(82) @ 12301: uvm_test_top.env.sbd [fifo_sbd] txs_mactched=16 txs_mismatched=0
+# UVM_INFO fifo_sbd.sv(83) @ 12301: uvm_test_top.env.sbd [fifo_sbd] *************************************
+# UVM_INFO fifo_sbd.sv(86) @ 12301: uvm_test_top.env.sbd [fifo_sbd] **************************************
+# UVM_INFO fifo_sbd.sv(87) @ 12301: uvm_test_top.env.sbd [PASSED] Full Test PASSED
+# UVM_INFO fifo_sbd.sv(88) @ 12301: uvm_test_top.env.sbd [fifo_sbd] num_fulls=2985
+# UVM_INFO fifo_sbd.sv(89) @ 12301: uvm_test_top.env.sbd [fifo_sbd] *************************************
+# UVM_INFO fifo_sbd.sv(92) @ 12301: uvm_test_top.env.sbd [fifo_sbd] **************************************
+# UVM_INFO fifo_sbd.sv(93) @ 12301: uvm_test_top.env.sbd [PASSED] Empty Test PASSED
+# UVM_INFO fifo_sbd.sv(94) @ 12301: uvm_test_top.env.sbd [fifo_sbd] num_emptys=2
+# UVM_INFO fifo_sbd.sv(95) @ 12301: uvm_test_top.env.sbd [fifo_sbd] *************************************
+# UVM_INFO fifo_sbd.sv(98) @ 12301: uvm_test_top.env.sbd [fifo_sbd] **************************************
+# UVM_INFO fifo_sbd.sv(99) @ 12301: uvm_test_top.env.sbd [PASSED] Overflow Test PASSED
+# UVM_INFO fifo_sbd.sv(100) @ 12301: uvm_test_top.env.sbd [fifo_sbd] num_overflows=2984
+# UVM_INFO fifo_sbd.sv(101) @ 12301: uvm_test_top.env.sbd [fifo_sbd] *************************************
+# UVM_INFO fifo_sbd.sv(104) @ 12301: uvm_test_top.env.sbd [fifo_sbd] **************************************
+# UVM_INFO fifo_sbd.sv(105) @ 12301: uvm_test_top.env.sbd [PASSED] Underflow Test PASSED
+# UVM_INFO fifo_sbd.sv(106) @ 12301: uvm_test_top.env.sbd [fifo_sbd] num_underflows=1
+# UVM_INFO fifo_sbd.sv(107) @ 12301: uvm_test_top.env.sbd [fifo_sbd] *************************************
+# UVM_INFO write_cov.sv(44) @ 12301: uvm_test_top.env.wagent.cov [write_cov] ********************total_write_coverage=100.000000**********************
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 12301: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   45
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PASSED]     5
+# [Questa UVM]     3
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [UVMTOP]     1
+# [fifo_sbd]    31
+# [read_cov]     1
+# [write_cov]     1
+# 
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 12301 ns  Iteration: 67  Instance: /top
+# End time: 14:53:30 on Jul 21,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+End time: 14:53:30 on Jul 21,2025, Elapsed time: 0:00:15
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   5
+    vsim: Errors:   0, Warnings:   1
+  Totals: Errors:   0, Warnings:   6
