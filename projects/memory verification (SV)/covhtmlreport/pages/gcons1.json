@@ -1,0 +1,4 @@
+var g_db_data = [
+{dummy:0},
+{name:'mem_cg',f:1,type:6,id:100,tb:'14',h:'14',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],lnk:'__HDL_srcfile_3.htm#5',hdlPath:'/list1_svh_unit/mem_cov',parent:'99'}];
+processConsCovergroupsData(g_db_data);

@@ -1,0 +1,10 @@
+var g_data = {'dummy':{null},
+'work.memory':{h:'3',s:1,b:1,t:1,z:1},
+'/top/dut':{h:'7',s:1,b:1,t:1,z:1},
+'work.top':{h:'4',z:1},
+'/top':{h:'6',z:1},
+'/list1_svh_unit/mem_cov':{h:'99',g:1,z:1},
+'/list1_svh_unit/mem_gen/run/#ublk#209835668#26':{h:'110',a:1,z:1},
+'/list1_svh_unit/mem_gen/run/#ublk#209835668#34':{h:'112',a:1,z:1},
+'work.list1_svh_unit':{h:'5',z:1},
+'/list1_svh_unit':{h:'95',z:1}};
