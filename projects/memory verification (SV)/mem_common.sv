@@ -1,0 +1,21 @@
+`define WIDTH 32
+`define DEPTH 1024
+`define ADDR_WIDTH $clog2(`DEPTH)
+class mem_common;
+static virtual mem_intf vif;
+static mailbox gen2bfmDA[];
+static mailbox mon2ref=new();
+static mailbox mon2cov=new();
+static string testname;
+static int count=10;
+static int total_tx_driven=0;
+static int num_agents=10;
+static semaphore smp=new(1);
+static int num_matches;
+static int num_mismatches;
+
+function new();	
+	gen2bfmDA=new[num_agents];
+	foreach(gen2bfmDA[i]) gen2bfmDA[i]=new();
+endfunction
+endclass

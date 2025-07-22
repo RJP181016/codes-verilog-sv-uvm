@@ -1,0 +1,232 @@
+# vsim -coverage -novopt -voptargs=""+cover=bcstf"" top -suppress 12110 -suppress 3369 "+testname=test_n_wt_n_rd" -l test_n_wt_n_rd.log 
+# Start time: 09:24:15 on Jul 22,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing C:/Users/rjite/Desktop/vlsiguru_codes/sv/10 Functional and code coverage/v_codes/memory_TB/work.top
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing C:/Users/rjite/Desktop/vlsiguru_codes/sv/10 Functional and code coverage/v_codes/memory_TB/work.list1_svh_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.list1_svh_unit
+# Loading work.top
+# Refreshing C:/Users/rjite/Desktop/vlsiguru_codes/sv/10 Functional and code coverage/v_codes/memory_TB/work.memory
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.memory
+# Refreshing C:/Users/rjite/Desktop/vlsiguru_codes/sv/10 Functional and code coverage/v_codes/memory_TB/work.mem_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.mem_intf
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$value$plusargs'.
+#    Time: 0 ns  Iteration: 0  Instance: /top File: tb_top.sv Line: 53
+#                   35: BFM#9 is doing write at addr=3b9, data=369751d8
+#                   65: BFM#8 is doing write at addr=232, data=d1bb0658
+#                   95: BFM#7 is doing write at addr=066, data=8cf4c428
+#                  125: BFM#6 is doing write at addr=0c6, data=fe939e91
+#                  155: BFM#5 is doing write at addr=0a3, data=faf4147f
+#                  185: BFM#4 is doing write at addr=35a, data=bc011e10
+#                  215: BFM#3 is doing write at addr=2ab, data=a3c323d0
+#                  245: BFM#2 is doing write at addr=36f, data=02d0819f
+#                  275: BFM#1 is doing write at addr=1cd, data=383e1875
+#                  305: BFM#0 is doing write at addr=15b, data=e6af8a2c
+#                  335: BFM#9 is doing write at addr=29d, data=a040c0a0
+#                  365: BFM#8 is doing write at addr=2c3, data=c5965c5f
+#                  395: BFM#7 is doing write at addr=2aa, data=cadc9977
+#                  425: BFM#6 is doing write at addr=31a, data=378b5c28
+#                  455: BFM#5 is doing write at addr=3a4, data=0c4c935f
+#                  485: BFM#4 is doing write at addr=156, data=5760b8e3
+#                  515: BFM#3 is doing write at addr=325, data=90aa474e
+#                  545: BFM#2 is doing write at addr=1f9, data=f492f2de
+#                  575: BFM#1 is doing write at addr=002, data=5add258c
+#                  605: BFM#0 is doing write at addr=34f, data=96cbc9d2
+#                  635: BFM#9 is doing write at addr=16f, data=b46bf1af
+#                  665: BFM#8 is doing write at addr=209, data=04801982
+#                  695: BFM#7 is doing write at addr=281, data=3de06dd1
+#                  725: BFM#6 is doing write at addr=1e5, data=e18b7a20
+#                  755: BFM#5 is doing write at addr=011, data=88575db4
+#                  785: BFM#4 is doing write at addr=092, data=153e71a0
+#                  815: BFM#3 is doing write at addr=21e, data=c8cd0143
+#                  845: BFM#2 is doing write at addr=2e5, data=d43afe15
+#                  875: BFM#1 is doing write at addr=039, data=8777dba6
+#                  905: BFM#0 is doing write at addr=240, data=eb686097
+#                  935: BFM#9 is doing write at addr=3b5, data=9718994a
+#                  965: BFM#8 is doing write at addr=256, data=756aed1f
+#                  995: BFM#7 is doing write at addr=145, data=bebffc58
+#                 1025: BFM#6 is doing write at addr=2ec, data=c37eda0d
+#                 1055: BFM#5 is doing write at addr=07b, data=d8e78383
+#                 1085: BFM#4 is doing write at addr=3ed, data=68e9978e
+#                 1115: BFM#3 is doing write at addr=025, data=c8b7a45c
+#                 1145: BFM#2 is doing write at addr=253, data=4edcae22
+#                 1175: BFM#1 is doing write at addr=374, data=892b25ae
+#                 1205: BFM#0 is doing write at addr=313, data=48ef117d
+#                 1235: BFM#9 is doing write at addr=157, data=da369f2f
+#                 1265: BFM#8 is doing write at addr=3fc, data=2ceeae7b
+#                 1295: BFM#7 is doing write at addr=06e, data=d682ad56
+#                 1325: BFM#6 is doing write at addr=25e, data=851ec78a
+#                 1355: BFM#5 is doing write at addr=33b, data=c78fd3cb
+#                 1385: BFM#4 is doing write at addr=166, data=f01b09f7
+#                 1415: BFM#3 is doing write at addr=14b, data=c320c51c
+#                 1445: BFM#2 is doing write at addr=2c7, data=dd74d362
+#                 1475: BFM#1 is doing write at addr=2a1, data=dadfee5b
+#                 1505: BFM#0 is doing write at addr=35e, data=8a0f2957
+#                 1535: BFM#9 is doing write at addr=38c, data=9423fec9
+#                 1565: BFM#8 is doing write at addr=2bc, data=ec90677b
+#                 1595: BFM#7 is doing write at addr=1f0, data=c7cce8ed
+#                 1625: BFM#6 is doing write at addr=0d5, data=5bb3e469
+#                 1655: BFM#5 is doing write at addr=1a3, data=97627a5c
+#                 1685: BFM#4 is doing write at addr=070, data=61023556
+#                 1715: BFM#3 is doing write at addr=221, data=c916d343
+#                 1745: BFM#2 is doing write at addr=29d, data=d9c70a3d
+#                 1775: BFM#1 is doing write at addr=306, data=12ebe7a2
+#                 1805: BFM#0 is doing write at addr=2a2, data=f7a5a431
+#                 1835: BFM#9 is doing write at addr=00f, data=ba6db486
+#                 1865: BFM#8 is doing write at addr=155, data=d595a2aa
+#                 1895: BFM#7 is doing write at addr=20f, data=5b751e4d
+#                 1925: BFM#6 is doing write at addr=183, data=f5cc50b8
+#                 1955: BFM#5 is doing write at addr=03c, data=8defe58c
+#                 1985: BFM#4 is doing write at addr=01e, data=50139f73
+#                 2015: BFM#3 is doing write at addr=0d0, data=0d78cb9c
+#                 2045: BFM#2 is doing write at addr=0b1, data=04ca6d4e
+#                 2075: BFM#1 is doing write at addr=08e, data=27694c4b
+#                 2105: BFM#0 is doing write at addr=1b8, data=cfe6b994
+#                 2135: BFM#9 is doing write at addr=019, data=8f3598df
+#                 2165: BFM#8 is doing write at addr=3cc, data=f213fa7e
+#                 2195: BFM#7 is doing write at addr=0db, data=6103bf26
+#                 2225: BFM#6 is doing write at addr=2ef, data=456f876b
+#                 2255: BFM#5 is doing write at addr=324, data=0237e785
+#                 2285: BFM#4 is doing write at addr=3a6, data=4aef9e7c
+#                 2315: BFM#3 is doing write at addr=3c1, data=8d66df5d
+#                 2345: BFM#2 is doing write at addr=05d, data=5d70c196
+#                 2375: BFM#1 is doing write at addr=244, data=7ecf30e4
+#                 2405: BFM#0 is doing write at addr=3a1, data=295826a6
+#                 2435: BFM#9 is doing write at addr=2a6, data=fc997500
+#                 2465: BFM#8 is doing write at addr=0ce, data=f4d2ba82
+#                 2495: BFM#7 is doing write at addr=01f, data=c5812f6e
+#                 2525: BFM#6 is doing write at addr=08a, data=0a896910
+#                 2555: BFM#5 is doing write at addr=113, data=12b98f26
+#                 2585: BFM#4 is doing write at addr=078, data=0b9af449
+#                 2615: BFM#3 is doing write at addr=311, data=0900b96b
+#                 2645: BFM#2 is doing write at addr=092, data=43d479ea
+#                 2675: BFM#1 is doing write at addr=190, data=cd62b68b
+#                 2705: BFM#0 is doing write at addr=0d9, data=b5f72b66
+#                 2735: BFM#9 is doing write at addr=280, data=6f30ede3
+#                 2765: BFM#8 is doing write at addr=226, data=8b649ea0
+#                 2795: BFM#7 is doing write at addr=271, data=96f8ec2b
+#                 2825: BFM#6 is doing write at addr=2fe, data=1949b22d
+#                 2855: BFM#5 is doing write at addr=314, data=cde14c89
+#                 2885: BFM#4 is doing write at addr=23c, data=68271d47
+#                 2915: BFM#3 is doing write at addr=1d2, data=8f534630
+#                 2945: BFM#2 is doing write at addr=372, data=2ce44536
+#                 2975: BFM#1 is doing write at addr=33f, data=7faab3d0
+#                 3005: BFM#0 is doing write at addr=07a, data=8d8747e4
+#                 3035: BFM#9 is doing  read at addr=3b9, data=369751d8
+#                 3065: BFM#8 is doing  read at addr=232, data=d1bb0658
+#                 3095: BFM#7 is doing  read at addr=066, data=8cf4c428
+#                 3125: BFM#6 is doing  read at addr=0c6, data=fe939e91
+#                 3155: BFM#5 is doing  read at addr=0a3, data=faf4147f
+#                 3185: BFM#4 is doing  read at addr=35a, data=bc011e10
+#                 3215: BFM#3 is doing  read at addr=2ab, data=a3c323d0
+#                 3245: BFM#2 is doing  read at addr=36f, data=02d0819f
+#                 3275: BFM#1 is doing  read at addr=1cd, data=383e1875
+#                 3305: BFM#0 is doing  read at addr=15b, data=e6af8a2c
+#                 3335: BFM#9 is doing  read at addr=29d, data=d9c70a3d
+#                 3365: BFM#8 is doing  read at addr=2c3, data=c5965c5f
+#                 3395: BFM#7 is doing  read at addr=2aa, data=cadc9977
+#                 3425: BFM#6 is doing  read at addr=31a, data=378b5c28
+#                 3455: BFM#5 is doing  read at addr=3a4, data=0c4c935f
+#                 3485: BFM#4 is doing  read at addr=156, data=5760b8e3
+#                 3515: BFM#3 is doing  read at addr=325, data=90aa474e
+#                 3545: BFM#2 is doing  read at addr=1f9, data=f492f2de
+#                 3575: BFM#1 is doing  read at addr=002, data=5add258c
+#                 3605: BFM#0 is doing  read at addr=34f, data=96cbc9d2
+#                 3635: BFM#9 is doing  read at addr=16f, data=b46bf1af
+#                 3665: BFM#8 is doing  read at addr=209, data=04801982
+#                 3695: BFM#7 is doing  read at addr=281, data=3de06dd1
+#                 3725: BFM#6 is doing  read at addr=1e5, data=e18b7a20
+#                 3755: BFM#5 is doing  read at addr=011, data=88575db4
+#                 3785: BFM#4 is doing  read at addr=092, data=43d479ea
+#                 3815: BFM#3 is doing  read at addr=21e, data=c8cd0143
+#                 3845: BFM#2 is doing  read at addr=2e5, data=d43afe15
+#                 3875: BFM#1 is doing  read at addr=039, data=8777dba6
+#                 3905: BFM#0 is doing  read at addr=240, data=eb686097
+#                 3935: BFM#9 is doing  read at addr=3b5, data=9718994a
+#                 3965: BFM#8 is doing  read at addr=256, data=756aed1f
+#                 3995: BFM#7 is doing  read at addr=145, data=bebffc58
+#                 4025: BFM#6 is doing  read at addr=2ec, data=c37eda0d
+#                 4055: BFM#5 is doing  read at addr=07b, data=d8e78383
+#                 4085: BFM#4 is doing  read at addr=3ed, data=68e9978e
+#                 4115: BFM#3 is doing  read at addr=025, data=c8b7a45c
+#                 4145: BFM#2 is doing  read at addr=253, data=4edcae22
+#                 4175: BFM#1 is doing  read at addr=374, data=892b25ae
+#                 4205: BFM#0 is doing  read at addr=313, data=48ef117d
+#                 4235: BFM#9 is doing  read at addr=157, data=da369f2f
+#                 4265: BFM#8 is doing  read at addr=3fc, data=2ceeae7b
+#                 4295: BFM#7 is doing  read at addr=06e, data=d682ad56
+#                 4325: BFM#6 is doing  read at addr=25e, data=851ec78a
+#                 4355: BFM#5 is doing  read at addr=33b, data=c78fd3cb
+#                 4385: BFM#4 is doing  read at addr=166, data=f01b09f7
+#                 4415: BFM#3 is doing  read at addr=14b, data=c320c51c
+#                 4445: BFM#2 is doing  read at addr=2c7, data=dd74d362
+#                 4475: BFM#1 is doing  read at addr=2a1, data=dadfee5b
+#                 4505: BFM#0 is doing  read at addr=35e, data=8a0f2957
+#                 4535: BFM#9 is doing  read at addr=38c, data=9423fec9
+#                 4565: BFM#8 is doing  read at addr=2bc, data=ec90677b
+#                 4595: BFM#7 is doing  read at addr=1f0, data=c7cce8ed
+#                 4625: BFM#6 is doing  read at addr=0d5, data=5bb3e469
+#                 4655: BFM#5 is doing  read at addr=1a3, data=97627a5c
+#                 4685: BFM#4 is doing  read at addr=070, data=61023556
+#                 4715: BFM#3 is doing  read at addr=221, data=c916d343
+#                 4745: BFM#2 is doing  read at addr=29d, data=d9c70a3d
+#                 4775: BFM#1 is doing  read at addr=306, data=12ebe7a2
+#                 4805: BFM#0 is doing  read at addr=2a2, data=f7a5a431
+#                 4835: BFM#9 is doing  read at addr=00f, data=ba6db486
+#                 4865: BFM#8 is doing  read at addr=155, data=d595a2aa
+#                 4895: BFM#7 is doing  read at addr=20f, data=5b751e4d
+#                 4925: BFM#6 is doing  read at addr=183, data=f5cc50b8
+#                 4955: BFM#5 is doing  read at addr=03c, data=8defe58c
+#                 4985: BFM#4 is doing  read at addr=01e, data=50139f73
+#                 5015: BFM#3 is doing  read at addr=0d0, data=0d78cb9c
+#                 5045: BFM#2 is doing  read at addr=0b1, data=04ca6d4e
+#                 5075: BFM#1 is doing  read at addr=08e, data=27694c4b
+#                 5105: BFM#0 is doing  read at addr=1b8, data=cfe6b994
+#                 5135: BFM#9 is doing  read at addr=019, data=8f3598df
+#                 5165: BFM#8 is doing  read at addr=3cc, data=f213fa7e
+#                 5195: BFM#7 is doing  read at addr=0db, data=6103bf26
+#                 5225: BFM#6 is doing  read at addr=2ef, data=456f876b
+#                 5255: BFM#5 is doing  read at addr=324, data=0237e785
+#                 5285: BFM#4 is doing  read at addr=3a6, data=4aef9e7c
+#                 5315: BFM#3 is doing  read at addr=3c1, data=8d66df5d
+#                 5345: BFM#2 is doing  read at addr=05d, data=5d70c196
+#                 5375: BFM#1 is doing  read at addr=244, data=7ecf30e4
+#                 5405: BFM#0 is doing  read at addr=3a1, data=295826a6
+#                 5435: BFM#9 is doing  read at addr=2a6, data=fc997500
+#                 5465: BFM#8 is doing  read at addr=0ce, data=f4d2ba82
+#                 5495: BFM#7 is doing  read at addr=01f, data=c5812f6e
+#                 5525: BFM#6 is doing  read at addr=08a, data=0a896910
+#                 5555: BFM#5 is doing  read at addr=113, data=12b98f26
+#                 5585: BFM#4 is doing  read at addr=078, data=0b9af449
+#                 5615: BFM#3 is doing  read at addr=311, data=0900b96b
+#                 5645: BFM#2 is doing  read at addr=092, data=43d479ea
+#                 5675: BFM#1 is doing  read at addr=190, data=cd62b68b
+#                 5705: BFM#0 is doing  read at addr=0d9, data=b5f72b66
+#                 5735: BFM#9 is doing  read at addr=280, data=6f30ede3
+#                 5765: BFM#8 is doing  read at addr=226, data=8b649ea0
+#                 5795: BFM#7 is doing  read at addr=271, data=96f8ec2b
+#                 5825: BFM#6 is doing  read at addr=2fe, data=1949b22d
+#                 5855: BFM#5 is doing  read at addr=314, data=cde14c89
+#                 5885: BFM#4 is doing  read at addr=23c, data=68271d47
+#                 5915: BFM#3 is doing  read at addr=1d2, data=8f534630
+#                 5945: BFM#2 is doing  read at addr=372, data=2ce44536
+#                 5975: BFM#1 is doing  read at addr=33f, data=7faab3d0
+#                 6005: BFM#0 is doing  read at addr=07a, data=8d8747e4
+#### TEST PASSED ####
+# addr_width         10
+# ** Note: $finish    : tb_top.sv(63)
+#    Time: 6035 ns  Iteration: 0  Instance: /top
+# 1
+# Break in Module top at tb_top.sv line 63
+coverage report -html -htmldir covhtmlreport -source -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
+# Report created in covhtmlreport/index.html
+coverage exclude -du memory -togglenode i
+# ** Note: Saving exclusion data to file: C:/Users/rjite/Desktop/vlsiguru_codes/sv/10 Functional and code coverage/v_codes/memory_TB/exclude.do
+coverage report -html -htmldir covhtmlreport -source -details -assert -directive -cvg -code bcefst -threshL 50 -threshH 90
+# Report created in covhtmlreport/index.html
+# End time: 09:28:56 on Jul 22,2025, Elapsed time: 0:04:41
+# Errors: 0, Warnings: 2
