@@ -1,0 +1,6 @@
+list1.svh
+mem_common.sv
+mem_cov.sv
+mem_gen.sv
+memory.v
+tb_top.sv
