@@ -1,0 +1,152 @@
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 15:03:21 on Jul 24,2025
+qrun -batch -access=rw+/. -uvmhome uvm-1.2 -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" "+UVM_VERBOSITY=UVM_HIGH" -do " run -all; exit" 
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 15:03:21 on Jul 24,2025
+vlog -timescale 1ns/1ns -mfcu -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.2/src" -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling program test
+
+Top level modules:
+	test
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+
+In file included from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl.c:27,
+                 from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc:37:
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c: In function 'int uvm_is_vhdl_path(char*)':
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:90:12: warning: 'char* strncpy(char*, const char*, size_t)' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+   90 |     strncpy(path_copy, path, path_len);
+      |     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:72:20: note: length computed here
+   72 |   path_len = strlen(path);
+      |              ~~~~~~^~~~~~
+
+End time: 15:03:24 on Jul 24,2025, Elapsed time: 0:00:03
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 15:03:24 on Jul 24,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	test
+
+Analyzing design...
+-- Loading program test
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Loading package questa_uvm_pkg
+Optimizing 3 design-units (inlining 0/1 module instances):
+-- Optimizing package uvm_pkg (uvm-1.2 Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing program test(fast)
+Optimized design name is qrun_opt
+End time: 15:03:31 on Jul 24,2025, Elapsed time: 0:00:07
+Errors: 0, Warnings: 1
+# vsim -batch "+UVM_VERBOSITY=UVM_HIGH" -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 15:03:32 on Jul 24,2025
+# Loading /tmp/unknown@05c4d4f78d88_dpi_52/linux_x86_64_gcc-10.3.0/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.uvm_pkg(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.test(fast)
+# Compiling /tmp/unknown@05c4d4f78d88_dpi_52/linux_x86_64_gcc-10.3.0/exportwrapper.c
+# Loading /tmp/unknown@05c4d4f78d88_dpi_52/linux_x86_64_gcc-10.3.0/vsim_auto_compile.so
+# 
+# run -all
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test new_test...
+# UVM_INFO test.sv(12) @ 0: uvm_test_top [new_test] Started build_pase
+# UVM_INFO test.sv(16) @ 0: uvm_test_top [new_test] Started connect_phase
+# UVM_INFO test.sv(20) @ 0: uvm_test_top [new_test] Started end_of_elaboration_phase 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_INFO test.sv(24) @ 0: uvm_test_top [new_test] Started start_of_simulation_phase 
+# UVM_INFO test.sv(30) @ 0: uvm_test_top [new_test] Start of run_phase
+# UVM_INFO test.sv(37) @ 0: uvm_test_top [new_test] Started pre_reset_phase
+# UVM_INFO test.sv(41) @ 0: uvm_test_top [new_test] Started reset_phase
+# UVM_INFO test.sv(44) @ 5: uvm_test_top [new_test] Ended reset_phase
+# UVM_INFO test.sv(49) @ 5: uvm_test_top [new_test] Started post_reset_phase
+# UVM_INFO test.sv(53) @ 5: uvm_test_top [new_test] Started pre_configure_phase
+# UVM_INFO test.sv(58) @ 5: uvm_test_top [new_test] Started configure_phase
+# UVM_INFO test.sv(60) @ 10: uvm_test_top [new_test] Ended configure_phase
+# UVM_INFO test.sv(65) @ 10: uvm_test_top [new_test] Started post_configure_phase
+# UVM_INFO test.sv(69) @ 10: uvm_test_top [new_test] Started pre_main_phase
+# UVM_INFO test.sv(74) @ 10: uvm_test_top [new_test] Started main_phase
+# UVM_INFO test.sv(76) @ 15: uvm_test_top [new_test] Ended main_phase
+# UVM_INFO test.sv(81) @ 15: uvm_test_top [new_test] Started post_main_phase
+# UVM_INFO test.sv(86) @ 15: uvm_test_top [new_test] Started pre_shutdown_phase
+# UVM_INFO test.sv(91) @ 15: uvm_test_top [new_test] Started shutdown_phase
+# UVM_INFO test.sv(93) @ 20: uvm_test_top [new_test] Ended shutdown_phase
+# UVM_INFO test.sv(98) @ 20: uvm_test_top [new_test] Started post_shutdown_phase
+# UVM_INFO test.sv(32) @ 50: uvm_test_top [new_test] End of run_phase
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 50: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO test.sv(102) @ 50: uvm_test_top [new_test] Started extract_phase 
+# UVM_INFO test.sv(106) @ 50: uvm_test_top [new_test] Started check_phase 
+# UVM_INFO test.sv(110) @ 50: uvm_test_top [new_test] Started report_phase 
+# UVM_INFO test.sv(114) @ 50: uvm_test_top [new_test] Started final_phase 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 50: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   32
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     3
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [new_test]    26
+# 
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 50 ns  Iteration: 58  Instance: /test
+# End time: 15:03:34 on Jul 24,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 15:03:34 on Jul 24,2025, Elapsed time: 0:00:13
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   1
