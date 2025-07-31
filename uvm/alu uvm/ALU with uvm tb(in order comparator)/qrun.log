@@ -1,0 +1,298 @@
+QuestaSim-64 qrun 2025.2 Utility 2025.05 May 31 2025
+Start time: 01:19:27 on Jul 30,2025
+qrun -batch -access=rw+/. -uvmhome uvm-1.2 -timescale 1ns/1ns -mfcu design.sv testbench.sv alu_cmodel.c -voptargs="+acc=npr" "+UVM_TESTNAME=alu_base_test" "+UVM_VERBOSITY=UVM_HIGH" -do " run -all; exit" 
+** Note: (qrun-220) 'modelsim.ini' is used as the ini file.
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 01:19:27 on Jul 30,2025
+vlog -timescale 1ns/1ns -mfcu -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv alu_cmodel.c -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.2/src" -statslog qrun.out/stats_log -csession=incr 
+** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+-- Compiling package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package uvm_pkg_sv_unit
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling module alu
+-- Compiling interface alu_intf
+-- Compiling module top
+
+Top level modules:
+	top
+** Note: (vlog-7082) For C/C++ auto compile, choosing compiler /usr/bin/gcc set from the PATH environment variable.
+-- Compiling DPI/PLI C file alu_cmodel.c
+** Note: (vlog-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+End time: 01:19:31 on Jul 30,2025, Elapsed time: 0:00:04
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 01:19:31 on Jul 30,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+2+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+
+Top level modules:
+	top
+
+Analyzing design...
+-- Loading module top
+-- Loading package questa_uvm_pkg
+-- Loading interface alu_intf
+-- Loading module alu
+Optimizing 7 design-units (inlining 0/3 module instances):
+-- Optimizing package uvm_pkg (uvm-1.2 Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing package uvm_pkg_sv_unit(fast)
+** Warning: alu_magent.sv(14): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: alu_sagent.sv(12): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: alu_sbd.sv(27): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: alu_seq.sv(34): (vopt-2240) Treating stand-alone use of function 'read_by_name' as an implicit VOID cast.
+-- Optimizing interface alu_intf(fast__2)
+-- Optimizing module top(fast)
+-- Optimizing module alu(fast)
+-- Optimizing interface alu_intf(fast)
+Optimized design name is qrun_opt
+End time: 01:19:39 on Jul 30,2025, Elapsed time: 0:00:08
+Errors: 0, Warnings: 5
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -batch "+UVM_TESTNAME=alu_base_test" "+UVM_VERBOSITY=UVM_HIGH" -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 01:19:39 on Jul 30,2025
+# Loading /tmp/unknown@79a5c81940dc_dpi_42/linux_x86_64_gcc-11/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.alu_intf(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.uvm_pkg_sv_unit(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.alu_intf(fast__2)
+# Loading work.alu(fast)
+# ** Note: (vsim-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+# Compiling /tmp/unknown@79a5c81940dc_dpi_42/linux_x86_64_gcc-11/exportwrapper.c
+# Loading /tmp/unknown@79a5c81940dc_dpi_42/linux_x86_64_gcc-11/vsim_auto_compile.so
+# 
+# run -all
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test alu_base_test...
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------------------
+# Name                       Type                                Size  Value
+# --------------------------------------------------------------------------
+# uvm_test_top               alu_base_test                       -     @360 
+#   env                      alu_env                             -     @372 
+#     magent                 alu_magent                          -     @387 
+#       ap                   uvm_analysis_port                   -     @412 
+#       drv                  alu_drv                             -     @545 
+#         rsp_port           uvm_analysis_port                   -     @562 
+#         seq_item_port      uvm_seq_item_pull_port              -     @553 
+#       iMon                 alu_iMon                            -     @571 
+#         mon_ap             uvm_analysis_port                   -     @580 
+#       sqr                  uvm_sequencer                       -     @422 
+#         rsp_export         uvm_analysis_export                 -     @430 
+#         seq_item_export    uvm_seq_item_pull_imp               -     @536 
+#         arbitration_queue  array                               0     -    
+#         lock_queue         array                               0     -    
+#         num_last_reqs      integral                            32    'd1  
+#         num_last_rsps      integral                            32    'd1  
+#     sagent                 alu_sagent                          -     @395 
+#       ap                   uvm_analysis_port                   -     @596 
+#       oMon                 alu_oMon                            -     @606 
+#         mon_ap             uvm_analysis_port                   -     @614 
+#     sbd                    alu_sbd                             -     @403 
+#       alu_ref              alu_ref_model                       -     @624 
+#         analysis_imp       uvm_analysis_imp                    -     @632 
+#         ref_out_port       uvm_analysis_port                   -     @800 
+#       m_comp               uvm_in_order_class_comparator #(T)  -     @641 
+#         after              uvm_tlm_analysis_fifo #(T)          -     @729 
+#           analysis_export  uvm_analysis_imp                    -     @773 
+#           get_ap           uvm_analysis_port                   -     @764 
+#           get_peek_export  uvm_get_peek_imp                    -     @746 
+#           put_ap           uvm_analysis_port                   -     @755 
+#           put_export       uvm_put_imp                         -     @737 
+#         after_export       uvm_analysis_export                 -     @658 
+#         before             uvm_tlm_analysis_fifo #(T)          -     @676 
+#           analysis_export  uvm_analysis_imp                    -     @720 
+#           get_ap           uvm_analysis_port                   -     @711 
+#           get_peek_export  uvm_get_peek_imp                    -     @693 
+#           put_ap           uvm_analysis_port                   -     @702 
+#           put_export       uvm_put_imp                         -     @684 
+#         before_export      uvm_analysis_export                 -     @649 
+#         pair_ap            uvm_analysis_port                   -     @667 
+#       mon_in               uvm_analysis_port                   -     @782 
+#       mon_out              uvm_analysis_port                   -     @791 
+# --------------------------------------------------------------------------
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_WARNING alu_ref_model.sv(18) @ 6: uvm_test_top.env.sbd.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_INFO @ 10: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 12: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 14: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 16: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 18: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 20: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 22: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 24: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_WARNING alu_ref_model.sv(18) @ 26: uvm_test_top.env.sbd.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_INFO @ 26: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 30: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 32: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 34: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 36: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 38: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 40: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 42: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 44: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 46: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 48: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_WARNING alu_ref_model.sv(18) @ 50: uvm_test_top.env.sbd.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_INFO @ 50: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 54: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 56: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 58: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 60: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 62: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 64: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 66: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 68: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 70: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_WARNING alu_ref_model.sv(18) @ 72: uvm_test_top.env.sbd.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_INFO @ 72: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 76: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 78: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 80: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 82: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 84: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 86: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 88: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 90: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 92: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 94: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 96: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 98: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 100: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 102: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 104: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 106: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 108: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 110: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 112: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 114: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 116: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 118: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 120: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 122: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 124: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 126: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 128: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 130: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 132: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 134: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 136: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 138: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 140: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 142: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 144: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 146: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 148: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 150: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_WARNING alu_ref_model.sv(18) @ 152: uvm_test_top.env.sbd.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_INFO @ 152: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 156: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 158: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 160: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 162: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 164: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 166: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 168: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 170: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 172: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 174: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 176: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 178: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 180: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 182: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 184: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 186: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 188: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 190: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 192: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 194: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 196: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 198: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 200: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 202: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 204: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO @ 206: uvm_test_top.env.sbd.m_comp [Comparator Match] 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 302: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO alu_sbd.sv(28) @ 302: uvm_test_top.env.sbd [alu_sbd] Scoreboard completed with matches=95 mismatches=0 
+# UVM_INFO alu_sbd.sv(37) @ 302: uvm_test_top.env.sbd [alu_sbd] **************************************
+# UVM_INFO alu_sbd.sv(38) @ 302: uvm_test_top.env.sbd [PASSED] Test PASSED
+# UVM_INFO alu_sbd.sv(39) @ 302: uvm_test_top.env.sbd [alu_sbd] pkts_mactched=95 pkts_mismatched=0 tx_drop_count=5
+# UVM_INFO alu_sbd.sv(40) @ 302: uvm_test_top.env.sbd [alu_sbd] *************************************
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 302: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  107
+# UVM_WARNING :    5
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Comparator Match]    95
+# [PASSED]     1
+# [Questa UVM]     3
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [UVMTOP]     1
+# [alu_sbd]     4
+# [tx_drop]     5
+# 
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 302 ns  Iteration: 67  Instance: /top
+# End time: 01:19:41 on Jul 30,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 01:19:41 on Jul 30,2025, Elapsed time: 0:00:14
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   5
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   5
