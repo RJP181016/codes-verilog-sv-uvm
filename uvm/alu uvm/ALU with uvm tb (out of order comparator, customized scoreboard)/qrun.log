@@ -1,0 +1,193 @@
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 14:57:45 on Aug 02,2025
+qrun -batch -access=rw+/. -uvmhome uvm-1.2 -timescale 1ns/1ns -mfcu design.sv testbench.sv alu_cmodel.c -voptargs="+acc=npr" "+UVM_TESTNAME=alu_base_test" "+UVM_VERBOSITY=UVM_HIGH" -do " run -all; exit" 
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 14:57:45 on Aug 02,2025
+vlog -timescale 1ns/1ns -mfcu -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv alu_cmodel.c -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.2/src" -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package uvm_pkg_sv_unit
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling module alu
+-- Compiling interface alu_intf
+-- Compiling module top
+
+Top level modules:
+	top
+-- Compiling DPI/PLI C file alu_cmodel.c
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+
+In file included from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl.c:27,
+                 from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc:37:
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c: In function 'int uvm_is_vhdl_path(char*)':
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:90:12: warning: 'char* strncpy(char*, const char*, size_t)' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+   90 |     strncpy(path_copy, path, path_len);
+      |     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:72:20: note: length computed here
+   72 |   path_len = strlen(path);
+      |              ~~~~~~^~~~~~
+
+End time: 14:57:48 on Aug 02,2025, Elapsed time: 0:00:03
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 14:57:48 on Aug 02,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	top
+
+Analyzing design...
+-- Loading module top
+-- Loading package questa_uvm_pkg
+-- Loading interface alu_intf
+-- Loading module alu
+Optimizing 7 design-units (inlining 0/3 module instances):
+-- Optimizing package uvm_pkg (uvm-1.2 Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing package uvm_pkg_sv_unit(fast)
+** Warning: alu_magent.sv(14): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: alu_sagent.sv(12): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: alu_seq.sv(30): (vopt-2240) Treating stand-alone use of function 'read_by_name' as an implicit VOID cast.
+** Warning: alu_seq.sv(46): (vopt-2240) Treating stand-alone use of function 'read_by_name' as an implicit VOID cast.
+** Warning: alu_seq.sv(61): (vopt-2240) Treating stand-alone use of function 'read_by_name' as an implicit VOID cast.
+** Warning: alu_seq.sv(76): (vopt-2240) Treating stand-alone use of function 'read_by_name' as an implicit VOID cast.
+** Warning: alu_sbd.sv(57): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+** Warning: alu_sbd.sv(61): (vopt-2240) Treating stand-alone use of function 'get' as an implicit VOID cast.
+-- Optimizing interface alu_intf(fast__2)
+-- Optimizing module top(fast)
+-- Optimizing module alu(fast)
+-- Optimizing interface alu_intf(fast)
+Optimized design name is qrun_opt
+End time: 14:57:56 on Aug 02,2025, Elapsed time: 0:00:08
+Errors: 0, Warnings: 9
+# vsim -batch "+UVM_TESTNAME=alu_base_test" "+UVM_VERBOSITY=UVM_HIGH" -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 14:57:56 on Aug 02,2025
+# Loading /tmp/unknown@a2c52a6a614f_dpi_59/linux_x86_64_gcc-10.3.0/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.alu_intf(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.uvm_pkg_sv_unit(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.alu_intf(fast__2)
+# Loading work.alu(fast)
+# Compiling /tmp/unknown@a2c52a6a614f_dpi_59/linux_x86_64_gcc-10.3.0/exportwrapper.c
+# Loading /tmp/unknown@a2c52a6a614f_dpi_59/linux_x86_64_gcc-10.3.0/vsim_auto_compile.so
+# 
+# run -all
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test alu_base_test...
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------------
+# Name                       Type                              Size  Value
+# ------------------------------------------------------------------------
+# uvm_test_top               alu_base_test                     -     @361 
+#   env                      alu_env                           -     @373 
+#     alu_ref                alu_ref_model                     -     @429 
+#       analysis_imp         uvm_analysis_imp                  -     @437 
+#       ref_out_port         uvm_analysis_port                 -     @446 
+#     cov                    alu_cov                           -     @412 
+#       analysis_imp         uvm_analysis_imp                  -     @420 
+#     magent                 alu_magent                        -     @388 
+#       ap                   uvm_analysis_port                 -     @456 
+#       drv                  alu_drv                           -     @589 
+#         rsp_port           uvm_analysis_port                 -     @606 
+#         seq_item_port      uvm_seq_item_pull_port            -     @597 
+#       iMon                 alu_iMon                          -     @615 
+#         mon_ap             uvm_analysis_port                 -     @624 
+#       sqr                  uvm_sequencer                     -     @466 
+#         rsp_export         uvm_analysis_export               -     @474 
+#         seq_item_export    uvm_seq_item_pull_imp             -     @580 
+#         arbitration_queue  array                             0     -    
+#         lock_queue         array                             0     -    
+#         num_last_reqs      integral                          32    'd1  
+#         num_last_rsps      integral                          32    'd1  
+#     sagent                 alu_sagent                        -     @396 
+#       ap                   uvm_analysis_port                 -     @640 
+#       oMon                 alu_oMon                          -     @650 
+#         mon_ap             uvm_analysis_port                 -     @658 
+#     sbd                    custom_scoreboard#(class alu_tx)  -     @404 
+#       mon_in               uvm_analysis_imp_in               -     @668 
+#       mon_out              uvm_analysis_imp_out              -     @677 
+# ------------------------------------------------------------------------
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_WARNING alu_ref_model.sv(21) @ 468: uvm_test_top.env.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_WARNING alu_ref_model.sv(21) @ 4452: uvm_test_top.env.alu_ref [tx_drop] Previous output matches with currnet output
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 8104: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO alu_sbd.sv(62) @ 8104: uvm_test_top.env.sbd [custom_scoreboard#(class alu_tx)] Scoreboard completed with matches=3999 mismatches=0 
+# UVM_INFO alu_sbd.sv(70) @ 8104: uvm_test_top.env.sbd [custom_scoreboard#(class alu_tx)] **************************************
+# UVM_INFO alu_sbd.sv(71) @ 8104: uvm_test_top.env.sbd [PASSED] Test PASSED
+# UVM_INFO alu_sbd.sv(72) @ 8104: uvm_test_top.env.sbd [custom_scoreboard#(class alu_tx)] txs_mactched=3999 txs_mismatched=0 tx_drop_count=2
+# UVM_INFO alu_sbd.sv(73) @ 8104: uvm_test_top.env.sbd [custom_scoreboard#(class alu_tx)] Coverage=100.000000%
+# UVM_INFO alu_sbd.sv(74) @ 8104: uvm_test_top.env.sbd [custom_scoreboard#(class alu_tx)] *************************************
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 8104: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   13
+# UVM_WARNING :    2
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PASSED]     1
+# [Questa UVM]     3
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [UVMTOP]     1
+# [custom_scoreboard#(class alu_tx)]     5
+# [tx_drop]     2
+# 
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 8104 ns  Iteration: 67  Instance: /top
+# End time: 14:57:59 on Aug 02,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+End time: 14:57:59 on Aug 02,2025, Elapsed time: 0:00:14
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   9
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   9
