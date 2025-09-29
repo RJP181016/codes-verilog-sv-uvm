@@ -1,0 +1,7 @@
+dma_reg_rd_test
+dma_reg_wr_rd_test
+dma_command_test
+dma_command_all_ch_test
+dma_command_list_test
+dma_scatter_gather_test
+dma_periph_transfer_test

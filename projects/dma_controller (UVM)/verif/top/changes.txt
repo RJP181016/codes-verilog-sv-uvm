@@ -1,0 +1,2 @@
+core0_ch_start core0_ch_start_r
+core0_clkdiv core0_clkdiv_r
