@@ -1,0 +1,168 @@
+# vsim -c -coverage -novopt -suppress 12110 -sv_lib C:/questasim64_10.7c/uvm-1.1d/win64/uvm_dpi top_tb "+UVM_TESTNAME=mac_10mbps_fd_tx_test" "+UVM_VERBOSITY=UVM_LOW" "+UVM_TIMEOUT=1000000" -l mac_10mbps_fd_tx_test.log -do "coverage save -onexit mac_10mbps_fd_tx_test.ucdb" -do "force -freeze sim:/top_tb/dut/macstatus1/LatchedCrcError 1'h0 0" -do "run -all" -do "vcov merge final_regr.ucdb mac_10mbps_fd_tx_test.ucdb" 
+# Start time: 21:31:35 on Sep 27,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Loading work.top_tb
+# Loading work.wb_proc_intf
+# Loading work.wb_mem_intf
+# Loading work.phy_intf
+# Loading work.mii_intf
+# Loading work.ethmac
+# Loading work.eth_miim
+# Loading work.eth_clockgen
+# Loading work.eth_shiftreg
+# Loading work.eth_outputcontrol
+# Loading work.eth_registers
+# Loading work.eth_register
+# Loading work.eth_maccontrol
+# Loading work.eth_receivecontrol
+# Loading work.eth_transmitcontrol
+# Loading work.eth_txethmac
+# Loading work.eth_txcounters
+# Loading work.eth_txstatem
+# Loading work.eth_crc
+# Loading work.eth_random
+# Loading work.eth_rxethmac
+# Loading work.eth_rxstatem
+# Loading work.eth_rxcounters
+# Loading work.eth_rxaddrcheck
+# Loading work.eth_wishbone
+# Loading work.eth_spram_256x32
+# Loading work.eth_fifo
+# Loading work.eth_macstatus
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/wb/memory.sv Line: 11
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/phy/phy_rx_mon.sv Line: 11
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/phy/phy_tx_mon.sv Line: 19
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/phy/phy_tx_mon.sv Line: 20
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit::wb_proc_base_seq File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/wb/wb_proc_seq_lib.sv Line: 16
+# ** Warning: (vsim-3764) Stand-alone call to function 'predict' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit::wb_reg_wt_rd_rm_seq File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/wb/wb_proc_seq_lib.sv Line: 96
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit::phy_rx_drv File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/phy/phy_rx_drv.sv Line: 10
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit::phy_tx_drv File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/phy/phy_tx_drv.sv Line: 18
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /top_tb_sv_unit::phy_tx_drv File: C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/phy/phy_tx_drv.sv Line: 20
+# Loading C:/questasim64_10.7c/uvm-1.1d/win64/uvm_dpi.dll
+# coverage save -onexit mac_10mbps_fd_tx_test.ucdb
+# force -freeze sim:/top_tb/dut/macstatus1/LatchedCrcError 1'h0 0
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test mac_10mbps_fd_tx_test...
+# UVM_INFO @ 0: reporter [TIMOUTSET] '+UVM_TIMEOUT=1000000' provided on the command line is being applied.
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               mac_10mbps_fd_tx_test   -     @460 
+#   env                      ethmac_env              -     @471 
+#     mem_agent_i            wb_mem_agent            -     @490 
+#       memory_i             memory                  -     @670 
+#       mon                  wb_mem_mon              -     @678 
+#         ap_port            uvm_analysis_port       -     @688 
+#     mii_agent_i            mii_agent               -     @514 
+#     phy_rx_agent_i         phy_rx_agent            -     @506 
+#       drv                  phy_rx_drv              -     @699 
+#         rsp_port           uvm_analysis_port       -     @716 
+#         seq_item_port      uvm_seq_item_pull_port  -     @707 
+#       mon                  phy_rx_mon              -     @848 
+#         ap_port            uvm_analysis_port       -     @859 
+#       sqr                  uvm_sequencer           -     @725 
+#         rsp_export         uvm_analysis_export     -     @733 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @839 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     phy_tx_agent_i         phy_tx_agent            -     @498 
+#       drv                  phy_tx_drv              -     @874 
+#         rsp_port           uvm_analysis_port       -     @891 
+#         seq_item_port      uvm_seq_item_pull_port  -     @882 
+#       mon                  phy_tx_mon              -     @900 
+#         ap_port            uvm_analysis_port       -     @913 
+#     proc_agent_i           wb_proc_agent           -     @482 
+#       cov                  wb_proc_cov             -     @1080
+#         analysis_imp       uvm_analysis_imp        -     @1088
+#       drv                  wb_proc_drv             -     @923 
+#         rsp_port           uvm_analysis_port       -     @940 
+#         seq_item_port      uvm_seq_item_pull_port  -     @931 
+#       mon                  wb_proc_mon             -     @1072
+#         ap_port            uvm_analysis_port       -     @1099
+#       sqr                  uvm_sequencer           -     @949 
+#         rsp_export         uvm_analysis_export     -     @957 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @1063
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     sbd                    mac_sbd                 -     @522 
+#       imp_mem              uvm_analysis_imp_mem    -     @1122
+#       imp_proc             uvm_analysis_imp_proc   -     @1113
+#       imp_rx               uvm_analysis_imp_rx     -     @1140
+#       imp_tx               uvm_analysis_imp_tx     -     @1131
+# --------------------------------------------------------------
+# 
+# UVM_INFO C:/questasim64_10.7c/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 430495: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO C:/Windows/Resources/vlsiguru/Ethernet_MAC_Functional_Verific/ethernet_mac_uvc/verif/sbd/mac_sbd.sv(92) @ 430495: uvm_test_top.env.sbd [sbd] TEST PASSED: matched=        512, mismatched=          0
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [TEST_DONE]     1
+# [TIMOUTSET]     1
+# [UVMTOP]     1
+# [sbd]     1
+# ** Note: $finish    : C:/questasim64_10.7c/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 430495 ns  Iteration: 53  Instance: /top_tb
+# Saving coverage database on exit...
+# End time: 21:31:39 on Sep 27,2025, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 10

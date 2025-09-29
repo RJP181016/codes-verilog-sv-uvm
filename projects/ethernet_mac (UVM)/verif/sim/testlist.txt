@@ -1,0 +1,10 @@
+mac_reg_read_test
+mac_reg_write_read_test
+mac_reg_read_rm_test
+mac_reg_write_read_rm_test
+mac_10mbps_fd_tx_test
+mac_100mbps_fd_tx_test
+mac_fd_rx_test
+mac_fd_tx_rx_test
+mac_collision_detect_test
+mac_mii_wr_ctrl_data_test
