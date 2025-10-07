@@ -1,0 +1,7 @@
+max:
+	BLT a0,a1,second
+	JAL zero,done
+second:
+	ADD a0,zero,a1
+done:
+	HLT

@@ -1,0 +1,23 @@
+ADD s1,zero,a0
+ADDI s0,zero,1
+loop:
+	ADDI s0,zero,1
+	ADD a0,zero,s0
+	ADD a1,zero,a0
+	JAL ra,fast_multiply
+	SLLI t0,s0,1
+	SW a0,0(t0)
+	BLT s0,s1,loop
+	HLT
+fast_multiply:
+	ADD t0,zero,zero
+next_digit:
+	ANDI t1,a1,1
+	SRAI a1,a1,1
+	BEQ t1,zero,skip
+	ADD t0,t0,a0
+skip:
+	SLLI a0,a0,1
+	BNE a1,zero,next_digit
+	ADD a0,zero,t0
+	JALR zero,ra,0

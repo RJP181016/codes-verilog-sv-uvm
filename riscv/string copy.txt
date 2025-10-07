@@ -1,0 +1,10 @@
+1:
+	lb t0,0(a1)
+	sb t0,0(a0)
+	beq t0,zero,1f
+
+	addi a0,a0,1
+	addi a1,a1,1
+	jal zero,1b
+1:
+	jalr zero,0(ra)
