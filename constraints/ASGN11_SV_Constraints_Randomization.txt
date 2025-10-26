@@ -1,0 +1,202 @@
+Easy
+
+1.	Write a constraint for the below scenario if A<20 then b value should generate 10 to 30 and if a>50 then the B value should be 30 to 50 only
+ 
+2.	Write the constraint to generate the three unique numbers , without using "unique"?
+
+3.	write a single constraint to generate the random values for bit[8:0] variable in the below range  1-54 , 127 ,137-166,196-209 & 231-262
+ 
+4.	Constraints to have Unique elements in an Array with Size in {5 - 10}
+ 
+5.	Write a constraint for 16-bit addr which should contain 9th bit as 1
+ 
+6.	Write a constraint for 16bit addr which should contain 9th bit as 1 but should not have constitutive 1
+ 
+7.	Write a constraint for 16bit addr to generate power of 2.
+ 
+8.	Write a constraint for APB slave select signal?
+ 
+9.	Write a constraint without an inside function to generate variable value within the range of 34 to 43?
+ 
+10.	Multi bit vector, generate value with only one bit in vector being ‘1’
+ 
+11.	Declare a Queue, Fill with 20 random values between 200 to 300, no repetition
+ 
+12.	Generate a random number between -5 to -15 using system tasks.
+ 
+13.	Generate a,b,c,d in such a way that all of them take unique values, but all of them inside 10 to 20 only.
+ 
+14.	Soft constraint using eth_pkt where constraint len is 42 to 1500 and inline constraint with 2000 len.
+ 
+15.	Explain Inline constraints using packet type and payload length example.
+ 
+16.	generate random number between 100, 200, which is a multiple of 5
+ 
+17.	Populate a queue with 10 elements, each element inside 100 to 200 and must also be a multiple of 5.
+ 
+18.	randomize only one variable in a class
+	a.	use rand_mode(0) to disable
+	b.	randomize(variable_to_randomize)
+	c.	We can print rand_mode() of variable also using $display
+ 
+19.	random number between 5 to 10 with weight of 5, -5 to -15 with weight of 10
+ 
+20.	Generate a random real number between -2.35 to 4.32
+	a.	generate a random value between 1.21 to 1.44
+ 
+21.	Generate a random real number between -2.35 to -4.32
+ 
+22.	Write a constraint to generate two queues of random sizes with unique values, also total number of elements in each queue should be less than or equal to 10. Queue element values should be in range of 50 to 200.
+ 
+23.	Write a constraint to generate a queue of random size with unique value, and each value being a power of 2, also size of queue can be 12 at maximum and minimum of 6.
+ 
+ 
+24.	Write a constraint to generate a queue of random size with unique value, and each value being divisible by 3 and 7 both, also size of queue can be 15 at maximum and minimum of 5.
+ 
+25.	Write a constraint to generate a queue of random size with unique value, and value at index with odd values are even and for index with even value having odd values stored in them, also size of queue can be even value between 10 and 16.
+ 
+
+ 
+MEDIUM
+
+54.	The constraint for an array of 10 elements in which the first 5 elements are in increment in nature and the next 5 elements are in decrement nature.
+	a.	All elements in range of 50 to 100.
+	b.	All elements should be multiple of 5
+ 
+55.	Write a constraint to store odd data in even addr and even data in odd addr.
+ 
+56.	write a constraint to generate unique even no. on even location & unique odd no. on odd location.
+
+57.	Write a constraint for an array of numbers such that the size of array ranges from 16 to 32 elements, and even index locations should have odd numbers and odd index locations should have even numbers, numbers rage is between 16 to 127
+ 
+58.	Write constraint for randomly generating an array of numbers with size 20, sort in ascending order without using inbuilt sort method, and sum of all array elements should be 300.
+ 
+59.	write the constraint to gen. this seq. 0 1 0 2 0 3 0 4 0 5 0  6  0  7  0  8  0  9  0 1 0 2 0 3 0 4 0 5 ... in array the same for a vector variable.
+	a.	0 0 1 0 0 2 0 0 3 0 0 4 …. 0 0 9 0 0 1 0 0 2…
+ 
+60.	Write a constraint to generate Real numbers from 3.5 to 5.5
+ 
+61.	Write a constraint for 10101010.. sequence
+ 
+62.	Given a 16-bit address field as a class member, write a constraint to generate a random value such that it always has 9bits as 1 and 111 or 000 sequences should not occur in that address.
+ 
+63.	Randomize a value with even and odd values alternatively.
+ 
+64.	Without using randomization or rand keyword, generates array of random values.
+ 
+65.	Generate unique elements in an array without using the keyword unique.
+ 
+66.	Constraint to generate 1’bx and 1’bz randomly
+	a.	Use post randomize to assign x and z based on other variable.
+ 
+67.	Write constraint on an array to generate values in ascending order.
+ 
+68.	Write constraint on an array such that even indexed elements are even values, odd indexed are odd values.
+ 
+69.	Write a constraint to generate a pattern 01020304050
+	a.	Declare an array
+	b.	For even index of array, fill 0’s
+	c.	Odd index use the i+1/2 relation in foreach loop
+ 
+70.	Factorial of first 5 even numbers using constraints
+	a.	Write a function to calculate factorial
+ 
+71.	Generate an array of random real random number
+ 
+72.	Write constraint to generate pattern 9-7-5-3-1-8-6-4-2-0
+ 
+73.	Write constraint to fill array with value in ascending order
+ 
+74.	Write constraints to randomize only specific bit of a bit vector, others are all 0’s
+ 
+75.	Generate a random string whose name is between “pkt1” to “pkt20”
+ 
+76.	Declare 2 array (or queue) elements each of size 10, randomize in such a way that 2nd array values are 1st array value added with 5 for each element.
+ 
+77.	Implement randc behavior using rand
+ 
+78.	Add “size” number of entries to a queue. The entry of queue is randomized between 0 to “size”
+ 
+79.	Write constraints to generate a n bit value such that the number of bits set is equal to number of bits that are zero
+ 
+80.	Write a constraint such that an array of inputs will never be equal and also never equal to the other input when the index is same
+ 
+81.	write a constraint for 3x3x3 array to have unique elements
+ 
+82.	Write constraint for an integer array with 10 elements such that exactly 3 of them are same and rest are unique
+ 
+83.	Constraint to randomize a 100 bit variable such that always and only 5 consecutive bits are 1s
+	a.	Question variation: 5-1’s and 5-0’s repeating pattern
+ 
+84.	Constraint to randomize an array such that one specific element picked is always a constant value, say element at index 5 is always 100.
+ 
+85.	write constraint to generate a random number with only 5 bits set and consecutively set for 80% of the time
+ 
+86.	Write a constraint to make sure every even item in an array is even and every odd item is odd.
+ 
+87.	Write constraint such that sum of arr[10] is 100 without using .sum method
+ 
+88.	Write constraint for an integer array with 10 elements such that exactly 3 of them are same and rest are unique
+ 
+89.	randcase
+	a.	No argument passed to randcase
+	b.	Different branches execute based on the branch weightage
+	c.	3 kinds of eth_pkt
+		i.	good_pkt
+			1.	Type: good
+		ii.	bad_pkt
+		iii.	illegal pkt
+	d.	User need to pass the weightage of these packets
+		i.	$value$plusargs to read these arguments
+		ii.	Generate in total 20 packets with above weightages.
+ 
+90.	Write constraints for following
+	a.	int intDA[];
+	b.	intDA each element can be either 2,4,8,16
+	c.	intDA each element must be bigger than 2*i
+		i.	i is index of the element in the array
+ 
+91.	generate eth_pkts (len only field), which are generated with large pkts with 80% chance, small packets with 20% chance
+	a.	large pkt length - 1000 to 1400
+	b.	small pkt length - 42 to 100
+	c.	Don't declare payload
+	d.	totally generate 20 pkts
+	e.	Hint: can use randcase
+	i.	Try other option also, like weighted random constraints
+ 
+92.	practical usage of above example
+	a.	if we have 3 slaves, we want to target more txs to slve#2, then we can use distribution constraint
+ 
+93.	Write unique constraint to assign random and unique values to array elements. Array of size 20, values in range of 100 to 200.
+ 
+94.	Soft constraints - Define Ethernet packet of different types, large, small and medium. Write constraints of soft nature. Use inline constraints to override the soft constraints and print the output.
+ 
+95.	Constraint blocks
+	a.	External constraint blocks
+		i.	Constraint blocks can be prototyped inside class as extern, can be defined outside class. Same as we do for task, functions
+		ii.	Try an example of above
+	b.	Constraint inheritance
+		i.	Constraints are inherited by default from base class
+		ii.	If they are not overridden in derived class, base class definition takes effect
+		iii.	Try an example for above:
+			1.	define a constraint in base class
+			2.	inherit the class, don’t override constraint
+			3.	try to randomize derived class object
+ 
+96.	Random Variables
+	a.	Generate 100 unique random numbers between 1 to 100 by using randc variable
+		i.	Understand why rand will not help here
+		ii.	Note : object=new should be done outside for loop
+	b.	randc variable declared static
+		i.	Declare count as bit [3: 0] as both randc and static
+		ii.	Randomize count using different instances of the class
+			1.	Ex: eth_pkt pkt1, pkt2, pkt3;
+			2.	Now randomize pkt1, pkt2. see the count behavior
+			3.	Note: randomization should follow the same sequence since it is static
+	c.	rand, pre_randomize, post_randomize, constraint_mode, rand_mode
+		i.	Create an example to change the randomize behaviour on testcase basis using pre_randomize & post_randomize
+		ii.	constraint_mode(0) : used to disable a constraint, again calling with (1) will enable randomization.
+		iii.	rand_mode & constraint_mode can be called from outside class
+			1.	pkt.sa.rand_mode(0);
+			2.	pkt.randomize();
+
