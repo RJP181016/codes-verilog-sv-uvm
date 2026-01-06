@@ -8,6 +8,7 @@
       foreach(a[i]) {
         a[i] inside {[200:300]};
       }
+        unique{a};
     }
   endclass
 
@@ -21,3 +22,4 @@
       end
     end
   endmodule
+
