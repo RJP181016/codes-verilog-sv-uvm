@@ -2,7 +2,7 @@
 open FH, "<testlist.txt";
 @tests = <FH>;
 
-$PRJ_HOME =  "C:/Windows/Resources/vlsiguru/DMA_controller/DMA_UVC";
+$PRJ_HOME =  ".";
 
 #Compile
 &compile;
@@ -72,3 +72,4 @@ sub merge() {
 sub report() {
     system("vsim -c -do \"coverage open final_regr.ucdb final_regr\" -do \"coverage report -html -htmldir covhtmlreport_regr -source -details -verbose -threshL 50 -threshH 90\" -do \"exit\"");
 }
+
